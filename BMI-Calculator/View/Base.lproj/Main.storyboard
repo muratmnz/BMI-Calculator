@@ -121,11 +121,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="heightLabel" destination="v4H-ki-EjB" id="zTQ-2O-v0n"/>
+                        <outlet property="heightLabel" destination="5uU-iV-5z1" id="lje-Pj-Yb6"/>
                         <outlet property="heightSlider" destination="hAw-Ca-NnU" id="hf5-2X-yXr"/>
-                        <outlet property="weightLabel" destination="Uji-y0-NVX" id="Ugy-OL-p4a"/>
+                        <outlet property="weightLabel" destination="JCS-Lu-uim" id="rYr-ul-YDg"/>
                         <outlet property="weightSlider" destination="WLe-Da-Vpk" id="C8a-Mg-wgc"/>
-                        <segue destination="c20-qZ-YrM" kind="presentation" id="Iji-5y-nHT"/>
+                        <segue destination="c20-qZ-YrM" kind="presentation" identifier="goToResult" id="Iji-5y-nHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -180,6 +180,10 @@
                         <viewLayoutGuide key="safeArea" id="b9E-y3-uak"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="0Mz-eQ-ytZ" id="w12-rP-c2f"/>
+                        <outlet property="bmiLabel" destination="N2I-1n-P0x" id="g87-oO-zUf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nra-4o-wge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
