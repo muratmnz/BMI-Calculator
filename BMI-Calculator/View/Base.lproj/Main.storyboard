@@ -11,7 +11,7 @@
         <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CalculateViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculateViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,13 +42,19 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Xut-vG-Vf3"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="heightSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vhz-Yc-9N7"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-Da-Vpk">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-Da-Vpk">
                                 <rect key="frame" x="8" y="702" width="377" height="30"/>
                                 <color key="tintColor" red="0.58506724480000005" green="0.47949843139999998" blue="0.76859849690000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="RoC-Gr-XXP"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="weightSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="q7D-X0-do4"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHK-Ag-LgO">
                                 <rect key="frame" x="15" y="759" width="363" height="34.333333333333371"/>
@@ -56,6 +62,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="CALCULATE"/>
+                                <connections>
+                                    <action selector="calculateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NqX-K6-cKI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALCULATE YOUR BMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1b7-lU-sng">
                                 <rect key="frame" x="110" y="241" width="295" height="111"/>
@@ -111,6 +120,13 @@
                             <constraint firstAttribute="bottom" secondItem="hAw-Ca-NnU" secondAttribute="bottom" constant="203.33333333333337" id="uwh-R0-3rX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightLabel" destination="v4H-ki-EjB" id="zTQ-2O-v0n"/>
+                        <outlet property="heightSlider" destination="hAw-Ca-NnU" id="hf5-2X-yXr"/>
+                        <outlet property="weightLabel" destination="Uji-y0-NVX" id="Ugy-OL-p4a"/>
+                        <outlet property="weightSlider" destination="WLe-Da-Vpk" id="C8a-Mg-wgc"/>
+                        <segue destination="c20-qZ-YrM" kind="presentation" id="Iji-5y-nHT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,7 +137,7 @@
             <objects>
                 <viewController id="c20-qZ-YrM" customClass="ResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tNl-Py-bfV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="WPr-oY-jjT">
